@@ -48,7 +48,7 @@
 #include <ctype.h>
 #include <errno.h>
 #include <fcntl.h>
-#ifndef NEED_BASENAME
+#if !defined(NEED_BASENAME) && !defined(Lynx)
 #include <libgen.h>
 #endif
 #include <limits.h>
