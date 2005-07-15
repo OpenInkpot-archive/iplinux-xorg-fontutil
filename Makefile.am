@@ -27,7 +27,7 @@ bdftruncate_SOURCES = bdftruncate.pl
 
 bdftruncate$(EXEEXT): $(bdftruncate_SOURCES)
 	@rm -f $@
-	cp $< $@
+	cp $(bdftruncate_SOURCES) $@
 
 mapfilesdir = $(libdir)/X11/fonts/util
 mapfiles_DATA = \
