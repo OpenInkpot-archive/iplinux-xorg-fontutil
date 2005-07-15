@@ -19,15 +19,14 @@
 #  NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
 #  CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-bin_PROGRAMS = ucs2any bdftruncate
+bin_PROGRAMS = ucs2any
+bin_SCRIPTS = bdftruncate
 
 ucs2any_SOURCES = ucs2any.c
 
-bdftruncate_SOURCES = bdftruncate.pl
-
-bdftruncate$(EXEEXT): $(bdftruncate_SOURCES)
+bdftruncate: $(srcdir)/bdftruncate.pl
 	@rm -f $@
-	cp $(bdftruncate_SOURCES) $@
+	cp $(srcdir)/bdftruncate.pl $@
 
 mapfilesdir = $(libdir)/X11/fonts/util
 mapfiles_DATA = \
