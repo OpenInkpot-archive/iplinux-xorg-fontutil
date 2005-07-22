@@ -24,11 +24,11 @@ bin_SCRIPTS = bdftruncate
 
 ucs2any_SOURCES = ucs2any.c
 
-bdftruncate: $(srcdir)/bdftruncate.pl
+bdftruncate: $(top_srcdir)/bdftruncate.pl
 	@rm -f $@
-	cp $(srcdir)/bdftruncate.pl $@
+	cp $(top_srcdir)/bdftruncate.pl $@
 
-mapfilesdir = $(libdir)/X11/fonts/util
+mapfilesdir = @mapdir@
 mapfiles_DATA = \
 	map-ISO8859-1 \
 	map-ISO8859-2 \
@@ -48,9 +48,15 @@ mapfiles_DATA = \
 	map-JISX0201.1976-0 \
 	map-KOI8-R
 
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = fontutil.pc
+
 man1_MANS = bdftruncate.man ucs2any.man
 
-aclocaldir = $(datadir)/aclocal
-aclocal_DATA = fontutil.m4
+DISTCLEANFILES = bdftruncate
 
-EXTRA_DIST = $(mapfiles_DATA) $(man1_MANS) autogen.sh $(aclocal_DATA)
+EXTRA_DIST = $(mapfiles_DATA) \
+	$(man1_MANS) \
+	autogen.sh \
+	bdftruncate.pl \
+	fontutil.pc.in

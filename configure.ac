@@ -31,4 +31,7 @@ AM_CONFIG_HEADER(config.h)
 AC_PROG_CC
 AC_PROG_INSTALL
 
-AC_OUTPUT([Makefile])
+mapdir="$libdir/X11/font/util"
+AC_SUBST(mapdir)
+
+AC_OUTPUT([Makefile fontutil.pc])
