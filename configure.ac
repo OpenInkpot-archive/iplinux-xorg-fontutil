@@ -22,7 +22,7 @@ dnl
 dnl Process this file with autoconf to create configure.
 
 AC_PREREQ([2.57])
-AC_INIT(font-util, [7.0], [xorg@freedestkop.org], font-util)
+AC_INIT(font-util, [0.99.0], [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg], font-util)
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
 AM_MAINTAINER_MODE
 
@@ -33,5 +33,7 @@ AC_PROG_INSTALL
 
 mapdir="$libdir/X11/fonts/util"
 AC_SUBST(mapdir)
+
+XORG_RELEASE_VERSION
 
 AC_OUTPUT([Makefile fontutil.pc])
