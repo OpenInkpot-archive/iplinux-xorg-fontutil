@@ -53,7 +53,7 @@ pkgconfig_DATA = fontutil.pc
 
 man1_MANS = bdftruncate.man ucs2any.man
 
-DISTCLEANFILES = bdftruncate
+CLEANFILES = bdftruncate
 
 EXTRA_DIST = $(mapfiles_DATA) \
 	$(man1_MANS) \
