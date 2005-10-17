@@ -34,6 +34,7 @@ AC_PROG_INSTALL
 mapdir="$libdir/X11/fonts/util"
 AC_SUBST(mapdir)
 
+XORG_MANPAGE_SECTIONS
 XORG_RELEASE_VERSION
 
 AC_OUTPUT([Makefile fontutil.pc])

@@ -51,12 +51,29 @@ mapfiles_DATA = \
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = fontutil.pc
 
-man1_MANS = bdftruncate.man ucs2any.man
+appmandir =  $(mandir)/man@APP_MAN_SUFFIX@
+appman_SOURCES = bdftruncate.man ucs2any.man
+appman_DATA = $(appman_SOURCES:man=@APP_MAN_SUFFIX@)
 
-CLEANFILES = bdftruncate
+CLEANFILES = bdftruncate $(appman_DATA)
 
 EXTRA_DIST = $(mapfiles_DATA) \
-	$(man1_MANS) \
+	$(appman_SOURCES) \
 	autogen.sh \
 	bdftruncate.pl \
 	fontutil.pc.in
+
+# Strings to replace in man pages
+XORGRELSTRING = @PACKAGE_STRING@
+  XORGMANNAME = X Version 11
+
+SED = sed
+
+MAN_SUBSTS = \
+        -e 's|__vendorversion__|"$(XORGRELSTRING)" "$(XORGMANNAME)"|' \
+        -e 's|__appmansuffix__|$(APP_MAN_SUFFIX)|g'
+
+SUFFIXES = .$(APP_MAN_SUFFIX) .man
+
+.man.$(APP_MAN_SUFFIX):
+	sed $(MAN_SUBSTS) < $< > $@
