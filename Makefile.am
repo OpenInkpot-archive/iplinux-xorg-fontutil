@@ -28,6 +28,9 @@ bdftruncate: $(top_srcdir)/bdftruncate.pl
 	@rm -f $@
 	cp $(top_srcdir)/bdftruncate.pl $@
 
+aclocaldir = $(datadir)/aclocal
+aclocal_DATA = fontutil.m4
+
 mapfilesdir = @mapdir@
 mapfiles_DATA = \
 	map-ISO8859-1 \
@@ -61,7 +64,8 @@ EXTRA_DIST = $(mapfiles_DATA) \
 	$(appman_SOURCES) \
 	autogen.sh \
 	bdftruncate.pl \
-	fontutil.pc.in
+	fontutil.pc.in \
+	$(aclocal_DATA)
 
 # Strings to replace in man pages
 XORGRELSTRING = @PACKAGE_STRING@
