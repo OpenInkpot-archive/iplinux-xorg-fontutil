@@ -54,7 +54,7 @@ mapfiles_DATA = \
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = fontutil.pc
 
-appmandir =  $(mandir)/man@APP_MAN_SUFFIX@
+appmandir = $(APP_MAN_DIR)
 appman_SOURCES = bdftruncate.man ucs2any.man
 appman_DATA = $(appman_SOURCES:man=@APP_MAN_SUFFIX@)
 
