@@ -55,13 +55,13 @@ pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = fontutil.pc
 
 appmandir = $(APP_MAN_DIR)
-appman_SOURCES = bdftruncate.man ucs2any.man
-appman_DATA = $(appman_SOURCES:man=@APP_MAN_SUFFIX@)
+appman_PRE = bdftruncate.man ucs2any.man
+appman_DATA = $(appman_PRE:man=@APP_MAN_SUFFIX@)
 
 CLEANFILES = bdftruncate $(appman_DATA)
 
 EXTRA_DIST = $(mapfiles_DATA) \
-	$(appman_SOURCES) \
+	$(appman_PRE) \
 	autogen.sh \
 	bdftruncate.pl \
 	fontutil.pc.in \
