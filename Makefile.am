@@ -31,7 +31,7 @@ bdftruncate: $(top_srcdir)/bdftruncate.pl
 aclocaldir = $(datadir)/aclocal
 aclocal_DATA = fontutil.m4
 
-mapfilesdir = @mapdir@
+mapfilesdir = @MAPDIR@
 mapfiles_DATA = \
 	map-ISO8859-1 \
 	map-ISO8859-2 \

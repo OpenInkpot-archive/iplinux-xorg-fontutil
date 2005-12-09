@@ -31,8 +31,14 @@ AM_CONFIG_HEADER(config.h)
 AC_PROG_CC
 AC_PROG_INSTALL
 
-mapdir="$libdir/X11/fonts/util"
-AC_SUBST(mapdir)
+m4_ifdef([AS_HELP_STRING], , [m4_define([AS_HELP_STRING], m4_defn([AC_HELP_STRING]))])
+
+DEFAULT_MAPDIR=${libdir}/X11/fonts/util
+AC_ARG_WITH(mapdir,
+	AS_HELP_STRING([--with-mapdir=MAPDIR], [Path to install font maps]),
+	[MAPDIR="$withval"],
+	[MAPDIR="$DEFAULT_MAPDIR"])
+AC_SUBST(MAPDIR)
 
 XORG_MANPAGE_SECTIONS
 XORG_RELEASE_VERSION
