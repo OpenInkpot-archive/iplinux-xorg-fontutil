@@ -1,6 +1,7 @@
 2006-02-17  Alan Coopersmith  <alan.coopersmith@sun.com>
 
 	* ucs2any.c: 
+	* COPYING:
 	Sync license statement with NetBSD, which has removed advertising 
 	clause from original NetBSD license.   (See
 	http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/xsrc/xfree/xc/fonts/util/ucs2any.c?rev=1.9&content-type=text/plain and
