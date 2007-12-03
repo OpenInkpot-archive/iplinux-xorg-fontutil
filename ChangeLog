@@ -1,3 +1,11 @@
+2007-12-03  James Cloos  <cloos@jhcloos.com>
+
+	* Makefile.am:
+	* bdftruncate.pl:
+	* bdftruncate.c:
+	Bug #13465: Replace bdftruncate.pl with bdftruncate.c
+	(Joerg Sonnenberger).
+
 2006-05-15  Adam Jackson  <ajax@freedesktop.org>
 
 	* configure.ac:
