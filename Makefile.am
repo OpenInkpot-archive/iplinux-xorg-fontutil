@@ -21,6 +21,8 @@
 
 bin_PROGRAMS = bdftruncate ucs2any
 
+AM_CFLAGS = $(CWARNFLAGS)
+
 ucs2any_SOURCES = ucs2any.c
 bdftruncate_SOURCES = bdftruncate.c
 
@@ -58,7 +60,6 @@ CLEANFILES = bdftruncate $(appman_DATA)
 
 EXTRA_DIST = $(mapfiles_DATA) \
 	$(appman_PRE) \
-	autogen.sh \
 	fontutil.pc.in \
 	$(aclocal_DATA)
 
@@ -83,6 +84,6 @@ MAINTAINERCLEANFILES = ChangeLog
 .PHONY: ChangeLog
 
 ChangeLog:
-	(GIT_DIR=$(top_srcdir)/.git git-log > .changelog.tmp && mv .changelog.tmp ChangeLog; rm -f .changelog.tmp) || (touch ChangeLog; echo 'git directory not found: installing possibly empty changelog.' >&2)
+	$(CHANGELOG_CMD)
 
 dist-hook: ChangeLog

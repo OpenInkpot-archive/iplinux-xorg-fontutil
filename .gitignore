@@ -20,3 +20,7 @@ stamp-h1
 ucs2any
 ucs2any.1
 *~
+*.o
+font-util-*.tar.*
+ChangeLog
+tags

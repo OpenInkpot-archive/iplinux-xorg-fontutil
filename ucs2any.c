@@ -52,7 +52,7 @@
 #include <unistd.h>
 
 /* global variable for argv[0] */
-const char *my_name = NULL;
+static const char *my_name = NULL;
 
 #ifdef NEED_BASENAME
 static char *
@@ -333,7 +333,7 @@ DEC VT100 graphics characters in the range 1-31 (as expected by
 some old xterm versions and a few other applications)
 */
 #define decmap_size 31
-int decmap[decmap_size] = {
+static int decmap[decmap_size] = {
 	0x25C6, /* BLACK DIAMOND */
 	0x2592, /* MEDIUM SHADE */
 	0x2409, /* SYMBOL FOR HORIZONTAL TABULATION */
@@ -519,6 +519,7 @@ main(int argc, char *argv[])
 	char *registry_encoding = NULL;
 
 	my_name = argv[0];
+	bbx.cheight = bbx.cxoff = bbx.cyoff = -1;
 
 	startchar = da_new("startchar");
 	my_char = da_new("my_char");
