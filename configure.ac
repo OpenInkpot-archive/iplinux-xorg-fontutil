@@ -26,11 +26,12 @@ AC_INIT(font-util, [1.0.2], [https://bugs.freedesktop.org/enter_bug.cgi?product=
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
 AM_MAINTAINER_MODE
 
-# Require xorg-macros: XORG_CWARNFLAGS, XORG_CHANGELOG
-m4_ifndef([XORG_MACROS_VERSION], [AC_FATAL([must install xorg-macros 1.2 or later before running autoconf/autogen])])
-XORG_MACROS_VERSION(1.2)
+# Require xorg-macros 1.3 or later: XORG_DEFAULT_OPTIONS
+m4_ifndef([XORG_MACROS_VERSION], [AC_FATAL([must install xorg-macros 1.3 or later before running autoconf/autogen])])
+XORG_MACROS_VERSION(1.3)
 AM_CONFIG_HEADER(config.h)
-XORG_CWARNFLAGS
+
+XORG_DEFAULT_OPTIONS
 
 AC_PROG_CC
 AC_PROG_INSTALL
@@ -40,9 +41,5 @@ AC_ARG_WITH(mapdir, AC_HELP_STRING([--with-mapdir=<pathname>],
 	[Path to install font maps]), [mapdir="$withval"])
 MAPDIR="$mapdir"
 AC_SUBST(MAPDIR)
-
-XORG_MANPAGE_SECTIONS
-XORG_RELEASE_VERSION
-XORG_CHANGELOG
 
 AC_OUTPUT([Makefile fontutil.pc])
