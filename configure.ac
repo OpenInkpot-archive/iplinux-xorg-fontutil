@@ -42,9 +42,8 @@ fontrootdir='${datadir}/fonts/X11'
 AC_ARG_WITH(fontrootdir, [AC_HELP_STRING([--with-fontrootdir=DIR],
 	[Path to parent of font subdirectories [DATADIR/fonts/X11]])],
 	[fontrootdir="${withval}"])
-FONTROOTDIR="${fontrootdir}"
-AC_SUBST(FONTROOTDIR)
-AC_MSG_RESULT([${FONTROOTDIR}])
+AC_SUBST(fontrootdir)
+AC_MSG_RESULT([${fontrootdir}])
 
 mapdir='${fontrootdir}/util'
 AC_ARG_WITH(mapdir, [AC_HELP_STRING([--with-mapdir=DIR],
