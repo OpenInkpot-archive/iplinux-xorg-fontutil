@@ -63,6 +63,8 @@ EXTRA_DIST = $(mapfiles_DATA) \
 	fontutil.pc.in \
 	$(aclocal_DATA)
 
+MAINTAINERCLEANFILES = ChangeLog INSTALL
+
 # Strings to replace in man pages
 XORGRELSTRING = @PACKAGE_STRING@
   XORGMANNAME = X Version 11
