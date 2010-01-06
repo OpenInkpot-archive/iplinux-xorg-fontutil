@@ -1,0 +1,5 @@
+xorg-fontutil (1.1.1-1) zelazny; urgency=low
+
+  * First build for IPlinux
+
+ -- Mikhail Gusarov <dottedmag@dottedmag.net>  Wed, 06 Jan 2010 18:28:15 +0600
